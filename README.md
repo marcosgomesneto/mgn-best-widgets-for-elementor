@@ -1,4 +1,4 @@
-# Elementor Hello World Sample Plugin
+# MGN Best Widgets for Elementor
 
 This is a sample plugin to demonstrate how you can write extentions (plugins) to add custom functionality to [Elementor](https://github.com/pojome/elementor/)
 

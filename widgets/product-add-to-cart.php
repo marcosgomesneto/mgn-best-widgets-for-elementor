@@ -108,6 +108,46 @@ class ProductAddToCart extends Widget_Base {
         //wc_get_template( 'single-product/price.php' );
 
         //Continuar Daqui
+
+		$this->start_controls_section(
+			'content_section',
+			[
+				'label' => __( 'Button', 'mgn-best-widgets-for-elementor' ),
+				'tab' => Controls_Manager::TAB_CONTENT,
+			]
+		);
+
+
+			$this->add_control(
+				'text_align',
+				[
+					'label' => __( 'Alignment', 'mgn-best-widgets-for-elementor' ),
+					'type' => \Elementor\Controls_Manager::CHOOSE,
+					'options' => [
+						'left' => [
+							'title' => __( 'Left', 'mgn-best-widgets-for-elementor' ),
+							'icon' => 'fa fa-align-left',
+						],
+						'center' => [
+							'title' => __( 'Center', 'mgn-best-widgets-for-elementor' ),
+							'icon' => 'fa fa-align-center',
+						],
+						'right' => [
+							'title' => __( 'Right', 'mgn-best-widgets-for-elementor' ),
+							'icon' => 'fa fa-align-right',
+						],
+					],
+					'default' => 'center',
+					'toggle' => true,
+					'selectors' => [
+						'{{WRAPPER}} .mgn-product-add-to-cart form.cart' => 'justify-content: {{VALUE}};'
+					]
+				]
+			);
+
+		$this->end_controls_section();
+
+		
 		$this->start_controls_section(
 			'section_style',
 			[
