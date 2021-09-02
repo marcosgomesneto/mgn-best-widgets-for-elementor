@@ -105,9 +105,44 @@ class ProductPrice extends Widget_Base {
 	 * @access protected
 	 */
 	protected function _register_controls() {		
-        //wc_get_template( 'single-product/price.php' );
+		$this->start_controls_section(
+			'content_section',
+			[
+				'label' => __( 'Button', 'mgn-best-widgets-for-elementor' ),
+				'tab' => Controls_Manager::TAB_CONTENT,
+			]
+		);
 
-        //Continuar Daqui
+
+			$this->add_control(
+				'text_align',
+				[
+					'label' => __( 'Alignment', 'mgn-best-widgets-for-elementor' ),
+					'type' => \Elementor\Controls_Manager::CHOOSE,
+					'options' => [
+						'left' => [
+							'title' => __( 'Left', 'mgn-best-widgets-for-elementor' ),
+							'icon' => 'fa fa-align-left',
+						],
+						'center' => [
+							'title' => __( 'Center', 'mgn-best-widgets-for-elementor' ),
+							'icon' => 'fa fa-align-center',
+						],
+						'right' => [
+							'title' => __( 'Right', 'mgn-best-widgets-for-elementor' ),
+							'icon' => 'fa fa-align-right',
+						],
+					],
+					'default' => 'left',
+					'toggle' => true,
+					'selectors' => [
+						'{{WRAPPER}} .mgn-product-price-box' => 'text-align: {{VALUE}};'
+					]
+				]
+			);
+
+		$this->end_controls_section();
+		
 		$this->start_controls_section(
 			'section_style',
 			[
@@ -115,7 +150,6 @@ class ProductPrice extends Widget_Base {
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
-
 
 		$this->add_group_control(
 			\Elementor\Group_Control_Typography::get_type(),
