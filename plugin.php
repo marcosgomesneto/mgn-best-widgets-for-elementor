@@ -47,6 +47,7 @@ class Plugin {
 	 */
 	public function widget_scripts() {
 		wp_register_script( 'elementor-hello-world', plugins_url( '/assets/js/hello-world.js', __FILE__ ), [ 'jquery' ], false, true );
+		wp_register_style( 'mgn-best-widget-for-elementor', plugins_url( '/assets/css/style.css', __FILE__ ) );
 	}
 
 	/**
@@ -60,6 +61,8 @@ class Plugin {
 	private function include_widgets_files() {
 		require_once( __DIR__ . '/widgets/hello-world.php' );
 		require_once( __DIR__ . '/widgets/inline-editing.php' );
+		require_once( __DIR__ . '/widgets/product-price.php' );
+		require_once( __DIR__ . '/widgets/product-add-to-cart.php' );
 	}
 
 	/**
@@ -77,6 +80,8 @@ class Plugin {
 		// Register Widgets
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new Widgets\Hello_World() );
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new Widgets\Inline_Editing() );
+		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new Widgets\ProductPrice() );
+		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new Widgets\ProductAddToCart() );
 	}
 
 	/**

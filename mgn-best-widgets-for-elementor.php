@@ -1,12 +1,12 @@
 <?php
 /**
- * Plugin Name: Elementor Hello World
- * Description: Elementor sample plugin.
- * Plugin URI:  https://elementor.com/
+ * Plugin Name: MGN Best Widgets for Elementor
+ * Description: Best extensions, plugins and Widgets for elementor.
+ * Plugin URI:  https://mgntech.com.br/wordpress-plugins/mgn-best-widgets-for-elementor
  * Version:     1.2.0
- * Author:      Author Name
- * Author URI:  https://elementor.com/
- * Text Domain: elementor-hello-world
+ * Author:      MGN Tech
+ * Author URI:  https://mgntech.com.br/
+ * Text Domain: mgn-best-widgets-for-elementor
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
@@ -73,7 +73,7 @@ final class Elementor_Hello_World {
 	 * @access public
 	 */
 	public function i18n() {
-		load_plugin_textdomain( 'elementor-hello-world' );
+		load_plugin_textdomain( 'mgn-best-widgets-for-elementor' );
 	}
 
 	/**
@@ -108,7 +108,7 @@ final class Elementor_Hello_World {
 			return;
 		}
 
-		// Once we get here, We have passed all validation checks so we can safely include our plugin
+		// Once we get her
 		require_once( 'plugin.php' );
 	}
 
